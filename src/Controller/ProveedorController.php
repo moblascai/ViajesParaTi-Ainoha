@@ -16,7 +16,7 @@ class ProveedorController extends AbstractController
 
 {
 /**
- * @Route("proveedor_form/inicio", name="app_proveedor_inicio")
+ * @Route("proveedor_form", name="app_proveedor_inicio")
  */
 public function inicio(): Response
 {
