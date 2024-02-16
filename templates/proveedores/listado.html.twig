@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Listado de Proveedores{% endblock %}</title>
+    <!-- Enlaces a los archivos CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+    {% block body %}
+        {% include 'menu.html.twig' %}
+        <h1>Listado de Proveedores</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>ID</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for proveedor in proveedores %}
+                    <tr>
+                        <td>{{ proveedor.nombre }}</td>
+                        <td>{{ proveedor.id }}</td>
+                        <td>
+                            <button class="editar-btn" data-id="{{ proveedor.id }}" data-url="{{ path('app_proveedor_editar', {'id': proveedor.id}) }}">Editar</button>
+                            <button class="eliminar-btn" data-id="{{ proveedor.id }}" data-url="{{ path('app_proveedor_eliminar', {'id': proveedor.id}) }}">Eliminar</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <script src="{{ asset('js/editar_proveedor.js') }}"></script>
+        <script src="{{ asset('js/eliminar_proveedor.js') }}"></script>
+    {% endblock %}
+<footer class="text-center mt-4">
+        <!-- Pie de página -->
+        <p>Aplicación proveedores ViajesParaTi</p>
+    </footer>
+</body>
+
+</html>

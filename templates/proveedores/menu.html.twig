@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+        <li><a href="{{ path('app_proveedor_listado') }}">Listado de Proveedores</a></li>
+        <li><a href="{{ path('app_proveedor_crear') }}">Crear Proveedor</a></li>
+        {% if proveedorId is defined %}
+            <li><a href="{{ path('app_proveedor_editar', {'id': proveedorId}) }}">Editar Proveedor</a></li>
+        {% else %}
+            <li><a href="{{ path('app_proveedor_editar') }}">Editar Proveedor</a></li>
+        {% endif %}
+    </ul>
+</nav>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Editar Proveedor{% endblock %}</title>
+    <!-- Enlaces a los archivos CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <!-- Menú de navegación -->
+        {% include 'menu.html.twig' %}
+    </header>
+
+    <main class="container mt-4">
+        {% block body %}
+            <h1>Editar Proveedor</h1>
+            {% if proveedor is defined %}
+                <p>Proveedor ID: {{ proveedor.id }}</p>
+                
+            {% else %}
+                <p>No se ha pasado ningún proveedor para editar.</p>
+            {% endif %}
+            {{ form_start(form) }}
+            {{ form_row(form.nombre) }}
+            {{ form_row(form.correoElectronico) }}
+            {{ form_row(form.telefonoContacto) }}
+            {{ form_row(form.tipoProveedor) }}
+            {{ form_row(form.activo) }}
+            <button type="submit">Guardar Cambios</button>
+            {{ form_end(form) }}
+        {% endblock %}
+    </main>
+
+    <footer class="text-center mt-4">
+        <!-- Pie de página -->
+        <p>Aplicación proveedores ViajesParaTi</p>
+    </footer>
+
+    <!-- Enlaces a los archivos JS de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

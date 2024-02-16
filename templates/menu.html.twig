@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Menú{% endblock %}</title>
+    <!-- Enlaces a los archivos CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+    {% block body %}
+        <nav class="menu">
+            <ul>
+                <li><a href="{{ path('app_proveedor_listado') }}">Listado de Proveedores</a></li>
+                <li><a href="{{ path('app_proveedor_crear') }}">Crear Proveedor</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <!-- Agrega el icono del menú desplegable aquí -->
+            </div>
+        </nav>
+    {% endblock %}
+</body>
+</html>

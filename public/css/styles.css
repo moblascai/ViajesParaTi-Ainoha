@@ -1,0 +1,151 @@
+* Estilos generales del menú */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+}
+
+/* Estilos del botón del menú */
+.menu-toggle {
+  display: none; /* Ocultar por defecto en pantallas grandes */
+  cursor: pointer;
+}
+
+/* Estilos del icono del botón del menú */
+.menu-toggle .fas {
+  color: #fff;
+  font-size: 24px;
+}
+
+/* Estilos de la lista de navegación */
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* Estilos de cada elemento de la lista */
+.nav-item {
+  margin-left: 20px;
+}
+
+/* Estilos del enlace */
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffa500;
+}
+
+/* Estilos del menú desplegable */
+.dropdown {
+  position: relative;
+}
+
+/* Estilos del contenido del menú desplegable */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Estilos de los elementos del menú desplegable */
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #444;
+}
+
+/* Mostrar el menú desplegable al pasar el ratón */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-list {
+    display: none; /* Ocultar la lista en pantallas pequeñas */
+  }
+}
+
+/* Estilo general de la aplicación */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilo para los formularios */
+.form-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
